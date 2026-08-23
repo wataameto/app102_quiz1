@@ -64,6 +64,19 @@
     "accentColor": "#6a11cb",
     "accentActive": "linear-gradient(135deg, #f5f3ff, #ede9fe)"
   },
+  "itpass2": {
+    "title": "（IPA）ITパスポート試験 実践編",
+    "heading": "（IPA）ITパスポート試験 実践編",
+    "genreMajor": "shikaku",
+    "genreMinor": "it_shikaku",
+    "description": "ITパスポート試験対策の実践編。定義暗記ではなく、具体的な数値計算やケーススタディ形式のシナリオ問題（損益分岐点・EVM・稼働率などの計算、インシデント対応の場面判断など）でストラテジ系・マネジメント系・テクノロジ系の応用力を鍛える",
+    "icon": "🧮",
+    "bgColor": "#0f2027",
+    "bgGradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
+    "topGradient": "linear-gradient(90deg, #7f00ff, #e100ff, #00c9ff, #ffd200)",
+    "accentColor": "#7f00ff",
+    "accentActive": "linear-gradient(135deg, #f7f0ff, #efe0ff)"
+  },
   "sapc02": {
     "title": "AWS認定ソリューションアーキテクト プロフェッショナル(SAP-C02)",
     "heading": "AWS認定ソリューションアーキテクト プロフェッショナル(SAP-C02)",
