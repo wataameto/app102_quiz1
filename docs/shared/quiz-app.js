@@ -487,6 +487,7 @@ function showAdmin() {
   document.getElementById('admin-subtitle').textContent = `${maxLevel}パートの問題・選択肢・正解・解説を表示中`;
 
   const lines = [];
+  const imageRefs = []; // 画像リンク切れチェック用（パート・レッスン・Q番号・パス）
   for (let level = 1; level <= maxLevel; level++) {
     const levelData = quizData[level];
     if (!levelData || !Array.isArray(levelData.tests)) continue;
@@ -501,6 +502,10 @@ function showAdmin() {
       test.questions.forEach((question, qIndex) => {
         lines.push('');
         lines.push(`Q${qIndex + 1}. ${question.scenario}`);
+        if (question.image) {
+          lines.push(`  [画像: ${question.image}]`);
+          imageRefs.push({ path: question.image, label: `${partLabel} / ${test.title} / Q${qIndex + 1}` });
+        }
         if (isTextQuestion(question)) {
           lines.push(`* 正解: ${question.correctText}`);
           if (question.acceptedAnswers && question.acceptedAnswers.length > 0) {
@@ -523,8 +528,36 @@ function showAdmin() {
     lines.push('');
   }
 
-  document.getElementById('admin-list').innerHTML = `<pre class="admin-text"></pre>`;
+  document.getElementById('admin-list').innerHTML = `<div id="admin-image-status" class="admin-image-status"></div><pre class="admin-text"></pre>`;
   document.querySelector('#admin-list .admin-text').textContent = lines.join('\n');
+  checkAdminImages(imageRefs);
+}
+
+function checkAdminImages(imageRefs) {
+  const statusEl = document.getElementById('admin-image-status');
+  if (!statusEl) return;
+  if (imageRefs.length === 0) {
+    statusEl.textContent = '';
+    return;
+  }
+  statusEl.textContent = `🖼 画像リンクを${imageRefs.length}件チェック中…`;
+
+  Promise.all(imageRefs.map(ref => new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve({ ...ref, ok: true });
+    img.onerror = () => resolve({ ...ref, ok: false });
+    img.src = ref.path;
+  }))).then(results => {
+    const broken = results.filter(r => !r.ok);
+    if (broken.length === 0) {
+      statusEl.textContent = `🖼 画像リンク: ${results.length}件すべてOK ✅`;
+      statusEl.classList.remove('admin-image-status-error');
+    } else {
+      const detail = broken.map(b => `❌ ${b.path}（${b.label}）`).join('\n');
+      statusEl.textContent = `🖼 画像リンク: ${results.length}件中${broken.length}件がリンク切れ\n${detail}`;
+      statusEl.classList.add('admin-image-status-error');
+    }
+  });
 }
 
 function updatePartBadge() {
@@ -1482,6 +1515,11 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
+function scenarioImageHtml(q) {
+  if (!q.image) return '';
+  return `<div class="scenario-image-wrap"><img class="scenario-image" src="${escapeHtml(q.image)}" alt="設問の図" loading="lazy"></div>`;
+}
+
 function searchIconHtml(text, asSpan) {
   const idx = searchTextRegistry.push(text) - 1;
   // 選択肢ボタンの中に置く場合はHTML仕様上<button>を入れ子にできない（パーサーが
@@ -1610,7 +1648,7 @@ function renderQuestion() {
   document.getElementById('progress-bar').style.width  = pct + '%';
   document.getElementById('progress-label').textContent = `第 ${currentQ + 1} 問 ／ ${total} 問`;
   document.getElementById('progress-pct').textContent   = pct + '%';
-  document.getElementById('scenario').innerHTML          = escapeHtml(q.scenario) + searchIconHtml(q.scenario);
+  document.getElementById('scenario').innerHTML          = escapeHtml(q.scenario) + searchIconHtml(q.scenario) + scenarioImageHtml(q);
   document.getElementById('feedback').className         = 'feedback';
   document.getElementById('feedback').textContent       = '';
   document.getElementById('explanation').className      = 'explanation';
@@ -1812,7 +1850,7 @@ async function showResults() {
     if (!ans.correct) extra += `<div class="answer-wrong">あなた: ${chosenText}</div>`;
     if (q.explanation) extra += `<div class="exp">💡 ${escapeHtml(q.explanation)}${searchIconHtml(q.explanation)}</div>`;
     return `<div class="answer-row-wrap">
-      <div class="answer-row"><span class="q-num">Q${i + 1}</span><span class="mark">${ans.correct ? '✅' : '❌'}</span><div class="answer-detail"><span>${escapeHtml(q.scenario)}</span>${searchIconHtml(q.scenario)}</div></div>
+      <div class="answer-row"><span class="q-num">Q${i + 1}</span><span class="mark">${ans.correct ? '✅' : '❌'}</span><div class="answer-detail"><span>${escapeHtml(q.scenario)}</span>${searchIconHtml(q.scenario)}${scenarioImageHtml(q)}</div></div>
       ${extra}
     </div>`;
   }).join('');

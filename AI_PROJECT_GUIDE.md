@@ -11,7 +11,7 @@
 
 主な入口:
 - docs/index.html: メインメニュー、認証判定、クイズ選択。
-- docs/{quiz}/index.html: 各クイズページ（sample, sample2, sample3, bokinyu, devops, sapc02, koukyou1, jouhou1, itpass, itpass2, itpassjr, fp3kyuu, takken, shouwa, heisei, capital, eiken2, eiken3, eiken2pre, eiken4, eiken5, gentsuki の22種）。HTML骨格のみで、見た目・挙動は docs/shared/ の共通ファイルを読み込む。sample3は記述式（自由入力）問題タイプの最小構成サンプル。
+- docs/{quiz}/index.html: 各クイズページ（sample, sample2, sample3, bokinyu, devops, sapc02, koukyou1, jouhou1, itpass, itpass2, itpass2023, itpass2024, itpass2025, itpassjr, fp3kyuu, takken, shouwa, heisei, capital, eiken2, eiken3, eiken2pre, eiken4, eiken5, gentsuki の25種）。HTML骨格のみで、見た目・挙動は docs/shared/ の共通ファイルを読み込む。sample3は記述式（自由入力）問題タイプの最小構成サンプル。itpass2023/2024/2025はIPA公開問題（過去問）をそのまま収録した教材（画像を使った設問の一覧は下記「画像を使った設問」参照）。
 - docs/shared/quiz-app.css: 全クイズページ共通のスタイル。
 - docs/shared/quiz-app.js: 全クイズページ共通のロジック（パート/レッスン表示、採点、Firebase連携など）。
 - docs/config.json: 各クイズの表示メタデータ。
@@ -50,6 +50,12 @@
 - ログアウトは `confirm()`/`alert()` を使わず、既存の `logout-modal` と同じ自前モーダルパターンを使う。iOS Safari（Chrome for iOSも含む）は繰り返しダイアログを出すページで「今後表示しない」を選べてしまい、選ばれると以降の `confirm()`/`alert()` が無言で失敗するため。
 - クイズ画面の問題文・選択肢・解説（結果画面の解答一覧も含む）には🔍アイコンが付いており、クリックすると `search-modal` が開いてその全文が選択可能なテキストとして表示される。テキストの一部をドラッグ選択してから「Googleで検索」を押すとその選択範囲だけを、何も選択しなければ全文をGoogle検索する（`searchIconHtml()` / `openSearchModal()` / `runTermSearch()` in quiz-app.js）。日本語の自動キーワード抽出は精度が低いため意図的に採用していない。選択肢の中の🔍は`<button>`の入れ子を避けるため`<span role="button">`で実装している。
 - メインメニューにはPWAインストールの案内が2種類ある（`renderPwaInstallUI()` in docs/index.html）。上のバナー（`#pwa-install-banner`）は×で閉じると`localStorage`の`pwaInstallBannerDismissed`フラグで二度と出なくなる。教材一覧の最下部の常設ヒント（`#pwa-install-footer-hint`）は×の対象外で常に表示される（iOSはSafariの共有ボタン経由の案内文、それ以外はブラウザのインストールボタンの案内文）。`isRunningStandalone()`がtrue（すでにホーム画面から起動済み）のときは両方とも表示しない。
+
+## 画像を使った設問
+- 設問に`image`フィールド（図表を画像として表示する機能。QUESTION_GUIDE.mdの「図・画像を伴う問題のルール」参照）を使っている箇所の一覧。新しく画像付き設問を追加したらここに追記する。
+- itpass2023: 問41（アローダイアグラム）、問86（ハイブリッド暗号方式のフローチャート）
+- itpass2024: 問41（アローダイアグラム）、問60（関係データベースの構成図）
+- itpass2025: 該当なし
 
 ## 問題データ
 - 各クイズの問題は docs/{quiz}/questions*.json に置く（例: docs/bokinyu/questions1.json, docs/devops/questions1.json）。

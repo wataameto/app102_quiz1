@@ -83,6 +83,14 @@ describe.each(quizzes)('Question quality: %s', (quiz) => {
     expect(report).toEqual([]);
   });
 
+  test('question images reference files that actually exist', () => {
+    const offenders = items
+      .filter(({ question }) => question.image)
+      .filter(({ quiz, question }) => !fs.existsSync(path.join(docsDir, quiz, question.image)))
+      .map(locate);
+    expect(offenders).toEqual([]);
+  });
+
   test('journal-type questions balance debit and credit in every choice', () => {
     const offenders = [];
     items

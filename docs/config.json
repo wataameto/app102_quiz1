@@ -65,8 +65,8 @@
     "accentActive": "linear-gradient(135deg, #f5f3ff, #ede9fe)"
   },
   "itpass2": {
-    "title": "（IPA）ITパスポート試験 実践編",
-    "heading": "（IPA）ITパスポート試験 実践編",
+    "title": "（IPA）ITパスポート試験2 実践編",
+    "heading": "（IPA）ITパスポート試験2 実践編",
     "genreMajor": "shikaku",
     "genreMinor": "it_shikaku",
     "description": "ITパスポート試験対策の実践編。定義暗記ではなく、具体的な数値計算やケーススタディ形式のシナリオ問題（損益分岐点・EVM・稼働率などの計算、インシデント対応の場面判断など）でストラテジ系・マネジメント系・テクノロジ系の応用力を鍛える",
@@ -76,6 +76,45 @@
     "topGradient": "linear-gradient(90deg, #7f00ff, #e100ff, #00c9ff, #ffd200)",
     "accentColor": "#7f00ff",
     "accentActive": "linear-gradient(135deg, #f7f0ff, #efe0ff)"
+  },
+  "itpass2023": {
+    "title": "（IPA）ITパスポート試験 2023年度 公開過去問",
+    "heading": "（IPA）ITパスポート試験 2023年度 公開過去問",
+    "genreMajor": "shikaku",
+    "genreMinor": "it_shikaku",
+    "description": "IPA公表の2023年度（令和5年度）ITパスポート試験公開問題（100問）をそのまま収録。本番の出題順・言い回しに慣れるための過去問演習教材",
+    "icon": "📜",
+    "bgColor": "#1a1200",
+    "bgGradient": "linear-gradient(135deg, #1a1200 0%, #3a2c02 50%, #5c4b0f 100%)",
+    "topGradient": "linear-gradient(90deg, #b8860b, #daa520, #ffd700, #f0e68c)",
+    "accentColor": "#b8860b",
+    "accentActive": "linear-gradient(135deg, #fff8e1, #fff3c4)"
+  },
+  "itpass2024": {
+    "title": "（IPA）ITパスポート試験 2024年度 公開過去問",
+    "heading": "（IPA）ITパスポート試験 2024年度 公開過去問",
+    "genreMajor": "shikaku",
+    "genreMinor": "it_shikaku",
+    "description": "IPA公表の2024年度（令和6年度）ITパスポート試験公開問題（100問）をそのまま収録。本番の出題順・言い回しに慣れるための過去問演習教材",
+    "icon": "📜",
+    "bgColor": "#1a1200",
+    "bgGradient": "linear-gradient(135deg, #1a1200 0%, #3a2c02 50%, #5c4b0f 100%)",
+    "topGradient": "linear-gradient(90deg, #a0522d, #cd853f, #daa520, #f0e68c)",
+    "accentColor": "#a0522d",
+    "accentActive": "linear-gradient(135deg, #fff3e0, #ffe4c4)"
+  },
+  "itpass2025": {
+    "title": "（IPA）ITパスポート試験 2025年度 公開過去問",
+    "heading": "（IPA）ITパスポート試験 2025年度 公開過去問",
+    "genreMajor": "shikaku",
+    "genreMinor": "it_shikaku",
+    "description": "IPA公表の2025年度（令和7年度）ITパスポート試験公開問題（100問）をそのまま収録。本番の出題順・言い回しに慣れるための過去問演習教材",
+    "icon": "📜",
+    "bgColor": "#1a1200",
+    "bgGradient": "linear-gradient(135deg, #1a1200 0%, #3a2c02 50%, #5c4b0f 100%)",
+    "topGradient": "linear-gradient(90deg, #8b4513, #b8860b, #daa520, #eedd82)",
+    "accentColor": "#8b4513",
+    "accentActive": "linear-gradient(135deg, #fdf0e0, #f5deb3)"
   },
   "sapc02": {
     "title": "AWS認定ソリューションアーキテクト プロフェッショナル(SAP-C02)",
