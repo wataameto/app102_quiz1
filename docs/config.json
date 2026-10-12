@@ -207,6 +207,19 @@
     "accentColor": "#11998e",
     "accentActive": "linear-gradient(135deg, #f0fdf4, #dcfce7)"
   },
+  "koukyou2": {
+    "title": "公共2 高校１年２学期中間考査対策",
+    "heading": "公共2 高校１年２学期中間考査対策",
+    "genreMajor": "gakkou",
+    "genreMinor": null,
+    "description": "高校「公共」2学期中間考査のテスト対策プリント。法の意義とルールづくり、基本的人権（自由権・平等権・社会権・新しい人権）、SNSと人権、参政権・国務請求権・知る権利などを扱う",
+    "icon": "🏛️",
+    "bgColor": "#1a1a2e",
+    "bgGradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+    "topGradient": "linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c)",
+    "accentColor": "#667eea",
+    "accentActive": "linear-gradient(135deg, #eef2ff, #e0e7ff)"
+  },
   "jouhou1": {
     "title": "情報処理1 練習問題",
     "heading": "情報処理1 練習問題",
