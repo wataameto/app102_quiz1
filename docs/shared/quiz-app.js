@@ -1820,6 +1820,11 @@ async function showResults() {
   if (isReviewMode) resultTitle = currentTest.title + ' 復習結果';
   if (isPracticeModeActive) resultTitle = currentTest.title + ' 練習結果';
   document.getElementById('result-title').textContent = resultTitle;
+  // 練習(演習)モード・誤答復習モードの結果は保存されないので、戻るボタンの注記を切り替える
+  const backNote = isPracticeModeActive ? '(現在練習モード)' : isReviewMode ? '(現在復習モード)' : '(結果保存)';
+  document.querySelectorAll('#screen-results .quiz-back-sub').forEach(el => {
+    el.textContent = backNote;
+  });
   document.getElementById('result-part-label').textContent = getPartLabel(quizData[currentLevel], currentLevel);
   document.getElementById('score-num').innerHTML    = `<span class="score-main">${score}点</span> <span class="score-sub">(${correct}/${total})</span>`;
 

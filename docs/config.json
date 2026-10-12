@@ -220,6 +220,19 @@
     "accentColor": "#667eea",
     "accentActive": "linear-gradient(135deg, #eef2ff, #e0e7ff)"
   },
+  "bizkiso1": {
+    "title": "ビジネス基礎1 高校１年２学期中間考査対策",
+    "heading": "ビジネス基礎1 高校１年２学期中間考査対策",
+    "genreMajor": "gakkou",
+    "genreMinor": null,
+    "description": "高校「ビジネス基礎」2学期中間考査対策。第4章「さまざまなビジネス」の要点整理（小売業・卸売業・物流業・金融業）を扱う",
+    "icon": "💼",
+    "bgColor": "#1f2933",
+    "bgGradient": "linear-gradient(135deg, #1f2933 0%, #2f4858 50%, #33658a 100%)",
+    "topGradient": "linear-gradient(90deg, #f6ae2d, #f26419, #86bbd8, #33658a)",
+    "accentColor": "#f26419",
+    "accentActive": "linear-gradient(135deg, #fff7ed, #ffedd5)"
+  },
   "jouhou1": {
     "title": "情報処理1 練習問題",
     "heading": "情報処理1 練習問題",
