@@ -11,7 +11,7 @@
 
 主な入口:
 - docs/index.html: メインメニュー、認証判定、クイズ選択。
-- docs/{quiz}/index.html: 各クイズページ（sample, sample2, sample3, bokinyu, devops, sapc02, koukyou1, koukyou2, bizkiso1, jouhou1, itpass, itpass2, itpass2023, itpass2024, itpass2025, itpassjr, fp3kyuu, takken, shouwa, heisei, capital, eiken2, eiken3, eiken2pre, eiken4, eiken5, gentsuki の27種）。HTML骨格のみで、見た目・挙動は docs/shared/ の共通ファイルを読み込む。sample3は記述式（自由入力）問題タイプの最小構成サンプル。itpass2023/2024/2025はIPA公開問題（過去問）をそのまま収録した教材（画像を使った設問の一覧は下記「画像を使った設問」参照）。
+- docs/{quiz}/index.html: 各クイズページ（sample, sample2, sample3, bokinyu, devops, sapc02, koukyou1, koukyou2, bizkiso1, boki2, jouhou1, itpass, itpass2, itpass2023, itpass2024, itpass2025, itpassjr, fp3kyuu, takken, shouwa, heisei, capital, eiken2, eiken3, eiken2pre, eiken4, eiken5, gentsuki の28種）。HTML骨格のみで、見た目・挙動は docs/shared/ の共通ファイルを読み込む。sample3は記述式（自由入力）問題タイプの最小構成サンプル。itpass2023/2024/2025はIPA公開問題（過去問）をそのまま収録した教材（画像を使った設問の一覧は下記「画像を使った設問」参照）。
 - docs/shared/quiz-app.css: 全クイズページ共通のスタイル。
 - docs/shared/quiz-app.js: 全クイズページ共通のロジック（パート/レッスン表示、採点、Firebase連携など）。
 - docs/config.json: 各クイズの表示メタデータ。

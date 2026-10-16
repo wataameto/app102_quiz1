@@ -233,6 +233,19 @@
     "accentColor": "#f26419",
     "accentActive": "linear-gradient(135deg, #fff7ed, #ffedd5)"
   },
+  "boki2": {
+    "title": "簿記2 高校１年２学期中間考査対策",
+    "heading": "簿記2 高校１年２学期中間考査対策",
+    "genreMajor": "gakkou",
+    "genreMinor": null,
+    "description": "高校「簿記」1年2学期中間考査の対策プリント。3分法による仕訳（貸付金・借入金・前受金・前払金・固定資産・貸倒れなど）と、決算整理仕訳（商品・貸倒引当金・減価償却）を扱う",
+    "icon": "📒",
+    "bgColor": "#14213d",
+    "bgGradient": "linear-gradient(135deg, #14213d 0%, #1d3557 50%, #457b9d 100%)",
+    "topGradient": "linear-gradient(90deg, #fca311, #e63946, #a8dadc, #457b9d)",
+    "accentColor": "#e63946",
+    "accentActive": "linear-gradient(135deg, #fff1f2, #ffe4e6)"
+  },
   "jouhou1": {
     "title": "情報処理1 練習問題",
     "heading": "情報処理1 練習問題",
